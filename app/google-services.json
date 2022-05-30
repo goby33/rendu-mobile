@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1029466506785",
+    "project_id": "myappburger-a9515",
+    "storage_bucket": "myappburger-a9515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029466506785:android:aaa8323bd1a714275a4560",
+        "android_client_info": {
+          "package_name": "com.mvince.androidcompose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029466506785-23t491kagb7tte6j4fef17ku9ek4v7h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz1poZrzeoj7C1LqAC1L1oce3XnKqv_nE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029466506785-23t491kagb7tte6j4fef17ku9ek4v7h3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
