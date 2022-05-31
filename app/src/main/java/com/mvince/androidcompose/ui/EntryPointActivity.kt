@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -70,7 +71,7 @@ private fun FoodApp(entryPointActivity: EntryPointActivity) {
             sign_inScreen(entryPointActivity, navController)
         }
         composable(route = NavigationKeys.Route.PHOTOS) {
-            PhotoDestination()
+            PhotoDestination(navController)
         }
     }
 }
@@ -97,9 +98,9 @@ private fun FoodCategoryDetailsDestination(navController: NavController) {
 
 @ExperimentalPermissionsApi
 @Composable
-private fun PhotoDestination() {
+private fun PhotoDestination(navController: NavHostController) {
     val viewModel: PhotosViewModel = hiltViewModel()
-    PhotosScreen(viewModel = viewModel)
+    PhotosScreen(viewModel = viewModel, navController = navController)
 }
 
 

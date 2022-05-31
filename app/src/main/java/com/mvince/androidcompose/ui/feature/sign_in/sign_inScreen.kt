@@ -163,7 +163,7 @@ fun BoxExample(entryPointActivity:  EntryPointActivity,
                     sign_in()
                 }) {
                 Text(
-                    text = "Inscription")
+                    text = "Se connecter")
             }
 
             if (isError) {

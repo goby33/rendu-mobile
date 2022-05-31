@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus
 import com.google.accompanist.permissions.rememberPermissionState
@@ -27,7 +28,9 @@ import com.mvince.androidcompose.R
 
 @ExperimentalPermissionsApi
 @Composable
-fun PhotosScreen(viewModel: PhotosViewModel) {
+fun PhotosScreen(
+    navController: NavHostController,
+    viewModel: PhotosViewModel) {
     val scaffoldState = rememberScaffoldState()
     Scaffold(
         scaffoldState = scaffoldState,
@@ -49,7 +52,7 @@ fun PhotosScreen(viewModel: PhotosViewModel) {
                         .width(270.dp)
                         .padding(bottom = 30.dp)
                 )
-                FeatureThatRequiresCameraPermission(viewModel)
+                FeatureThatRequiresCameraPermission(viewModel, navController)
             }
 
         }
@@ -58,7 +61,7 @@ fun PhotosScreen(viewModel: PhotosViewModel) {
 
 @ExperimentalPermissionsApi
 @Composable
-private fun FeatureThatRequiresCameraPermission(viewModel: PhotosViewModel) {
+private fun FeatureThatRequiresCameraPermission(viewModel: PhotosViewModel, navController: NavHostController) {
     val bitmapFromCamera = remember { mutableStateOf<Bitmap?>(null) }
     val launcher =
         rememberLauncherForActivityResult(ActivityResultContracts.TakePicturePreview()) {
@@ -107,7 +110,7 @@ private fun FeatureThatRequiresCameraPermission(viewModel: PhotosViewModel) {
                                 .padding(top = 20.dp),
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF6D95DB)),
                             onClick = {
-                                //TODO
+                                navController.navigate("food")
                             }) {
                             Text(
                                 text = "continuer"
